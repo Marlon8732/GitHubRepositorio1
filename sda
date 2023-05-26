@@ -1,0 +1,128 @@
+[33mcommit a7237cef4ebad602d7f3d4f01ce13447530d3600[m[33m ([m[1;36mHEAD -> [m[1;32mversionSimple[m[33m)[m
+Author: Marlon Davila <marlon_davil@yahoo.com>
+Date:   Fri May 19 21:04:11 2023 -0600
+
+    Actualización a una versión más refactorizada v1
+
+[1mdiff --git a/.vscode/launch.json b/.vscode/launch.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1b4b699[m
+[1m--- /dev/null[m
+[1m+++ b/.vscode/launch.json[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m    "version": "0.2.0",[m
+[32m+[m[32m    "configurations": [[m
+[32m+[m[32m        {[m
+[32m+[m[32m            // Use IntelliSense to find out which attributes exist for C# debugging[m
+[32m+[m[32m            // Use hover for the description of the existing attributes[m
+[32m+[m[32m            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md[m
+[32m+[m[32m            "name": ".NET Core Launch (console)",[m
+[32m+[m[32m            "type": "coreclr",[m
+[32m+[m[32m            "request": "launch",[m
+[32m+[m[32m            "preLaunchTask": "build",[m
+[32m+[m[32m            // If you have changed target frameworks, make sure to update the program path.[m
+[32m+[m[32m            "program": "${workspaceFolder}/bin/Debug/net6.0/ColecDictionary.dll",[m
+[32m+[m[32m            "args": [],[m
+[32m+[m[32m            "cwd": "${workspaceFolder}",[m
+[32m+[m[32m            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console[m
+[32m+[m[32m            "console": "internalConsole",[m
+[32m+[m[32m            "stopAtEntry": false[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": ".NET Core Attach",[m
+[32m+[m[32m            "type": "coreclr",[m
+[32m+[m[32m            "request": "attach"[m
+[32m+[m[32m        }[m
+[32m+[m[32m    ][m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/.vscode/tasks.json b/.vscode/tasks.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1b3b7d6[m
+[1m--- /dev/null[m
+[1m+++ b/.vscode/tasks.json[m
+[36m@@ -0,0 +1,41 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m    "version": "2.0.0",[m
+[32m+[m[32m    "tasks": [[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "label": "build",[m
+[32m+[m[32m            "command": "dotnet",[m
+[32m+[m[32m            "type": "process",[m
+[32m+[m[32m            "args": [[m
+[32m+[m[32m                "build",[m
+[32m+[m[32m                "${workspaceFolder}/ColecDictionary.csproj",[m
+[32m+[m[32m                "/property:GenerateFullPaths=true",[m
+[32m+[m[32m                "/consoleloggerparameters:NoSummary"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "problemMatcher": "$msCompile"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "label": "publish",[m
+[32m+[m[32m            "command": "dotnet",[m
+[32m+[m[32m            "type": "process",[m
+[32m+[m[32m            "args": [[m
+[32m+[m[32m                "publish",[m
+[32m+[m[32m                "${workspaceFolder}/ColecDictionary.csproj",[m
+[32m+[m[32m                "/property:GenerateFullPaths=true",[m
+[32m+[m[32m                "/consoleloggerparameters:NoSummary"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "problemMatcher": "$msCompile"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "label": "watch",[m
+[32m+[m[32m            "command": "dotnet",[m
+[32m+[m[32m            "type": "process",[m
+[32m+[m[32m            "args": [[m
+[32m+[m[32m                "watch",[m
+[32m+[m[32m                "run",[m
+[32m+[m[32m                "--project",[m
+[32m+[m[32m                "${workspaceFolder}/ColecDictionary.csproj"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "problemMatcher": "$msCompile"[m
+[32m+[m[32m        }[m
+[32m+[m[32m    ][m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/slas b/slas[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dc4ae15[m
+[1m--- /dev/null[m
+[1m+++ b/slas[m
+[36m@@ -0,0 +1,35 @@[m
+[32m+[m[32m[33mcommit f77eb3bbfc7544388c9ef2cda47dd1469922197c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m[m
+[32m+[m[32mAuthor: Marlon Davila <marlon_davil@yahoo.com>[m
+[32m+[m[32mDate:   Thu May 11 21:00:11 2023 -0600[m
+[32m+[m
+[32m+[m[32m    Mostrando la suma, mayor y menor[m
+[32m+[m
+[32m+[m[32m[33mcommit 38dfd3e349e716325c057396f472ef593f19bc20[m[m
+[32m+[m[32mAuthor: Marlon Davila <marlon_davil@yahoo.com>[m
+[32m+[m[32mDate:   Thu May 11 20:59:11 2023 -0600[m
+[32m+[m
+[32m+[m[32m    Resultados del programa[m
+[32m+[m
+[32m+[m[32m[33mcommit a591072fed6b81757109cf510653fd3b81303271[m[m
+[32m+[m[32mAuthor: Marlon Davila <marlon_davil@yahoo.com>[m
+[32m+[m[32mDate:   Thu May 11 20:57:34 2023 -0600[m
+[32m+[m
+[32m+[m[32m    Ordenando un arreglo en paralelo[m
+[32m+[m
+[32m+[m[32m[33mcommit a085ab8fcc1bf1a18712c8c42726c3d7a7e81dd3[m[m
+[32m+[m[32mAuthor: Marlon Davila <marlon_davil@yahoo.com>[m
+[32m+[m[32mDate:   Thu May 11 20:56:19 2023 -0600[m
+[32m+[m
+[32m+[m[32m    Encontrando los nombres del mayor y el menor[m
+[32m+[m
+[32m+[m[32m[33mcommit 924c4dca899cbbfdf2601188d7340ae16ec0bee6[m[m
+[32m+[m[32mAuthor: Marlon Davila <marlon_davil@yahoo.com>[m
+[32m+[m[32mDate:   Thu May 11 20:46:47 2023 -0600[m
+[32m+[m
+[32m+[m[32m    Encontrando el mayor y el menor[m
+[32m+[m
+[32m+[m[32m[33mcommit 9c6ba2cb36cc33d15782b74a5b447156955034de[m[m
+[32m+[m[32mAuthor: Marlon Davila <marlon_davil@yahoo.com>[m
+[32m+[m[32mDate:   Thu May 11 20:40:51 2023 -0600[m
+[32m+[m
+[32m+[m[32m    “Agregando comentario sobre que hace el programa”[m
