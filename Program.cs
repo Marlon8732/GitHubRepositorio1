@@ -51,4 +51,3 @@ Console.WriteLine($"Departamento con mayor Población:{maxDepto.Name}");
 //Sumar todas las poblaciones con SUM de LINQ
 int total = lstDeptos.Select(d=>d.population).Sum();
 Console.WriteLine($"Poblacion General:{total:N0}");
->>>>>>> 9607120 (“Versi≤n)
